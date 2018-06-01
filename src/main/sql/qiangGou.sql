@@ -1,7 +1,7 @@
 -- 数据库初始化脚本
 
 -- 创建数据库
-CREATE DATABASE qiang_gou;
+CREATE DATABASE `qiang_gou` default character set utf8 COLLATE utf8_general_ci;
 -- 使用数据库
 USE qiang_gou;
 
