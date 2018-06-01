@@ -1,13 +1,13 @@
 -- 数据库初始化脚本
 
 -- 创建数据库
-CREATE DATABASE qiaogou;
+CREATE DATABASE qiang_gou;
 -- 使用数据库
-USE qianggou;
+USE qiang_gou;
 
 -- 只有InnoDB支持事物
 -- 创建抢购库存表
-CREATE TABLE qianggou(
+CREATE TABLE qiang_gou(
   `qianggou_id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '抢购商品id',
   `name` VARCHAR(120) NOT NULL COMMENT '商品名称',
   `number` INT NOT NULL COMMENT '库存数量',
@@ -24,7 +24,7 @@ CREATE TABLE qianggou(
 -- 初始化数据
 -- Mysql支持字符串转换时间
 INSERT INTO
-  qianggou(name, number, start_time, end_time)
+  qiang_gou(name, number, start_time, end_time)
 VALUES
   ('1000元抢购iphone6', 100, '2018-04-30 00:00:00', '2018-05-01 00:00:00'),
   ('500元抢购ipad2', 200, '2018-04-30 00:00:00', '2018-05-01 00:00:00'),
