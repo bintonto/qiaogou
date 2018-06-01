@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bintonto.dao.SeckillDao">
+
+    <update id="reduceNumber" >
+        UPDATE qiang_gou
+        SET number = number - 1
+        WHERE qianggou_id = #{qiangGouId}
+        AND number > 1
+        AND start_time <![CDATA[<=]]> #{killTime}
+        AND end_time >= #{killTime}
+    </update>
+
+    <select id="queryById" resultType="QiangGou">
+        SELECT qianggou_id, name, number, start_time, end_time, create_time
+        FROM qiang_gou
+        WHERE qianggou_id = #{qiangGouId}
+    </select>
+
+    <select id="queryAll" resultType="Seckill">
+        SELECT qianggou_id, name, number, start_time, end_time, create_time
+        FROM qiang_gou
+        ORDER BY create_time DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+
+</mapper>
