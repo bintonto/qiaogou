@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bintonto.dao.SuccessQiangGouDao">
+
+    <insert id="insertSuccessQiangGou">
+        <!-- insert语句主键冲突会报错，需加ignore忽略-->
+        INSERT IGNORE INTO success_killed(qianggou_id, user_phone, state)
+        VALUES (#{qiangGouId}, #{userPhone}, 0)
+    </insert>
+
+    <select id="queryByIdWithQiangGou" resultType="SuccessQiangGou">
+
+        <!-- 需要映射属性，后面加上映射的东西 -->
+        SELECT
+        sk.qianggou_id,
+        sk.user_phone,
+        sk.state,
+        sk.create_time,
+        s.qianggou_id "qiang_gou.qianggou_id",
+        s.name "qiang_gou.name",
+        s.number "qiang_gou.number",
+        s.start_time "qiang_gou.start_time",
+        s.end_time "qiang_gou.end_time",
+        s.create_time "qiang_gou.create_time"
+        FROM success_killed sk
+        INNER JOIN qiang_gou s on sk.qianggou_id = s.qianggou_id
+        WHERE sk.qianggou_id = #{qiangGouId}
+        AND sk.user_phone = #{userPhone}
+
+    </select>
+
+</mapper>
