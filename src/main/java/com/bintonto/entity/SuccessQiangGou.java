@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class SuccessQiangGou {
 
-    private long seckillId;
+    private long qiaogouId;
 
     private long userPhone;
 
@@ -16,12 +16,12 @@ public class SuccessQiangGou {
     // 多对一，一个秒杀实体对应多个秒杀成功记录
     private QiangGou qiangGou;
 
-    public long getSeckillId() {
-        return seckillId;
+    public long getQiaogouId() {
+        return qiaogouId;
     }
 
-    public void setSeckillId(long seckillId) {
-        this.seckillId = seckillId;
+    public void setQiaogouId(long qiaogouId) {
+        this.qiaogouId = qiaogouId;
     }
 
     public long getUserPhone() {
@@ -59,7 +59,7 @@ public class SuccessQiangGou {
     @Override
     public String toString() {
         return "SuccessQiangGou{" +
-                "seckillId=" + seckillId +
+                "qiaogouId=" + qiaogouId +
                 ", userPhone=" + userPhone +
                 ", state=" + state +
                 ", createTime=" + createTime +
