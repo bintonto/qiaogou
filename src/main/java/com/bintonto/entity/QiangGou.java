@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class QiangGou {
 
-    private long qiaoGouId;
+    private long qiangGouId;
 
     private String name;
 
@@ -16,12 +16,12 @@ public class QiangGou {
 
     private Date createTime;
 
-    public long getQiaoGouId() {
-        return qiaoGouId;
+    public long getQiangGouId() {
+        return qiangGouId;
     }
 
-    public void setQiaoGouId(long qiaoGouId) {
-        this.qiaoGouId = qiaoGouId;
+    public void setQiangGouId(long qiangGouId) {
+        this.qiangGouId = qiangGouId;
     }
 
     public String getName() {
@@ -67,7 +67,7 @@ public class QiangGou {
     @Override
     public String toString() {
         return "QiangGou{" +
-                "qiaoGouId=" + qiaoGouId +
+                "qiangGouId=" + qiangGouId +
                 ", name='" + name + '\'' +
                 ", number=" + number +
                 ", startTime=" + startTime +
