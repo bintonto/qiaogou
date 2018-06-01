@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-public interface QiaoGouDao {
+public interface QiangGouDao {
     /**
      * 减库存
      * @return 返回1 表示更新行数， 0 表示失败
@@ -25,11 +25,6 @@ public interface QiaoGouDao {
      */
     List<QiangGou> queryAll(@Param("offset") int offset, @Param("limit") int limit);
 
-    /**
-     * 使用存储过程执行秒杀
-     * @param paramMap
-     */
-    void killByProcedure(Map<String, Object> paramMap);
 
 
 }
